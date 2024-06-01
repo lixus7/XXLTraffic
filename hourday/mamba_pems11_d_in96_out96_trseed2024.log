@@ -1,0 +1,117 @@
+Args in experiment:Args in experiment:Args in experiment:
+
+
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=521, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems11_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=521, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems11_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=336, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=521, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems11_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=521, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems11_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=192, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=521, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems11_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=521, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems11_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+
+Use GPU: cuda:0
+Use GPU: cuda:0Use GPU: cuda:0
+
+>>>>>>>start training : long_term_forecast_pems11_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>start training : long_term_forecast_pems11_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>start training : long_term_forecast_pems11_d_96_192_Mamba_custom_ftM_sl192_ll48_pl192_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5127
+train 4839
+train 5319
+val 453
+val 597
+val 693
+test 1239
+test 1383
+test 1479
+	iters: 100, epoch: 1 | loss: 0.4071479
+	speed: 0.0458s/iter; left time: 71.5467s
+	iters: 100, epoch: 1 | loss: 0.4440624
+	speed: 0.0552s/iter; left time: 82.9215s
+Epoch: 1 cost time: 6.060749292373657
+Epoch: 1 cost time: 7.650569438934326
+	iters: 100, epoch: 1 | loss: 0.6606017
+	speed: 0.0780s/iter; left time: 109.9947s
+Epoch: 1 cost time: 10.578876972198486
+Epoch: 1, Steps: 166 | Train Loss: 0.4784548 Vali Loss: 0.4623579 Test Loss: 28102.2167969
+Validation loss decreased (inf --> 0.462358).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3537630
+	speed: 0.1017s/iter; left time: 141.8508s
+Epoch: 1, Steps: 160 | Train Loss: 0.5741419 Vali Loss: 0.5031164 Test Loss: 59119.8828125
+Validation loss decreased (inf --> 0.503116).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 4.389127492904663
+	iters: 100, epoch: 2 | loss: 0.4555985
+	speed: 0.1352s/iter; left time: 181.3404s
+Epoch: 1, Steps: 151 | Train Loss: 0.6461796 Vali Loss: 0.5324262 Test Loss: 117572.2109375
+Validation loss decreased (inf --> 0.532426).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 6.31869101524353
+Epoch: 2, Steps: 166 | Train Loss: 0.3697835 Vali Loss: 0.4568436 Test Loss: 27557.1621094
+Validation loss decreased (0.462358 --> 0.456844).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 2 | loss: 0.5082653
+	speed: 0.1755s/iter; left time: 221.0870s
+	iters: 100, epoch: 3 | loss: 0.2870371
+	speed: 0.1072s/iter; left time: 131.7167s
+Epoch: 3 cost time: 4.519196510314941
+Epoch: 2 cost time: 8.623069524765015
+Epoch: 2, Steps: 160 | Train Loss: 0.4455530 Vali Loss: 0.5075908 Test Loss: 58075.7421875
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+Epoch: 3, Steps: 166 | Train Loss: 0.3387963 Vali Loss: 0.4681874 Test Loss: 27596.5488281
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 3 | loss: 0.3596166
+	speed: 0.1442s/iter; left time: 170.2762s
+Epoch: 3 cost time: 6.446971893310547
+	iters: 100, epoch: 4 | loss: 0.3032654
+	speed: 0.1062s/iter; left time: 112.8649s
+Epoch: 4 cost time: 4.4805591106414795
+Epoch: 2, Steps: 151 | Train Loss: 0.5080336 Vali Loss: 0.5477572 Test Loss: 118086.6875000
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+Epoch: 3, Steps: 160 | Train Loss: 0.3995759 Vali Loss: 0.5130628 Test Loss: 58235.3554688
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+Epoch: 4, Steps: 166 | Train Loss: 0.3248962 Vali Loss: 0.4707628 Test Loss: 27585.8261719
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 3 | loss: 0.4874810
+	speed: 0.1870s/iter; left time: 207.3523s
+	iters: 100, epoch: 5 | loss: 0.2755820
+	speed: 0.1015s/iter; left time: 91.0562s
+Epoch: 3 cost time: 9.041737794876099
+	iters: 100, epoch: 4 | loss: 0.3508705
+	speed: 0.1407s/iter; left time: 143.6984s
+Epoch: 5 cost time: 4.593957901000977
+Epoch: 4 cost time: 6.582642078399658
+Epoch: 5, Steps: 166 | Train Loss: 0.3182489 Vali Loss: 0.4691825 Test Loss: 27603.5488281
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems11_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1479
+Epoch: 3, Steps: 151 | Train Loss: 0.4522929 Vali Loss: 0.5686616 Test Loss: 118574.3828125
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+Epoch: 4, Steps: 160 | Train Loss: 0.3821646 Vali Loss: 0.5193209 Test Loss: 58421.9296875
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems11_d_96_192_Mamba_custom_ftM_sl192_ll48_pl192_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1383
+test shape: (1479, 1, 96, 521) (1479, 1, 96, 521)
+test shape: (1479, 96, 521) (1479, 96, 521)
+mse:27556.921875, mae:4.283880710601807
+>>>>>>>Overall time: 63 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	iters: 100, epoch: 4 | loss: 0.3676570
+	speed: 0.1765s/iter; left time: 169.0704s
+Epoch: 4 cost time: 8.449772596359253
+test shape: (1383, 1, 192, 521) (1383, 1, 192, 521)
+test shape: (1383, 192, 521) (1383, 192, 521)
+mse:59119.8203125, mae:7.55230712890625
+>>>>>>>Overall time: 69 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Epoch: 4, Steps: 151 | Train Loss: 0.4284978 Vali Loss: 0.5747232 Test Loss: 119088.0234375
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems11_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1239
+test shape: (1239, 1, 336, 521) (1239, 1, 336, 521)
+test shape: (1239, 336, 521) (1239, 336, 521)
+mse:117572.84375, mae:12.926066398620605
+>>>>>>>Overall time: 85 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

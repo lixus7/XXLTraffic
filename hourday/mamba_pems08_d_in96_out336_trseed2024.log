@@ -1,0 +1,37 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=212, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems08_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=212, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems08_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=336, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems08_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5223
+val 508
+test 1349
+	iters: 100, epoch: 1 | loss: 0.7544750
+	speed: 0.0489s/iter; left time: 74.8813s
+Epoch: 1 cost time: 6.70551609992981
+Epoch: 1, Steps: 163 | Train Loss: 0.7749262 Vali Loss: 0.6274920 Test Loss: 1.1614755
+Validation loss decreased (inf --> 0.627492).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.5476964
+	speed: 0.1194s/iter; left time: 163.2747s
+Epoch: 2 cost time: 5.388851165771484
+Epoch: 2, Steps: 163 | Train Loss: 0.5811605 Vali Loss: 0.6646528 Test Loss: 1.2032462
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.4711316
+	speed: 0.1148s/iter; left time: 138.3439s
+Epoch: 3 cost time: 5.081598997116089
+Epoch: 3, Steps: 163 | Train Loss: 0.4605822 Vali Loss: 0.6759691 Test Loss: 1.2124188
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.4164776
+	speed: 0.1215s/iter; left time: 126.6454s
+Epoch: 4 cost time: 5.1684250831604
+Epoch: 4, Steps: 163 | Train Loss: 0.4222223 Vali Loss: 0.6774960 Test Loss: 1.2169901
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems08_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1349
+test shape: (1349, 1, 336, 212) (1349, 1, 336, 212)
+test shape: (1349, 336, 212) (1349, 336, 212)
+mse:1.161474585533142, mae:0.6966919302940369
+>>>>>>>Overall time: 57 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

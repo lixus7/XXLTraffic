@@ -1,0 +1,31 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=130, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems06_all_common_flow.csv', dec_in=130, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems06_all_96_720', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=720, root_path='../../data/pems/', samle_rate=0.1, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_all_96_720_TimesNet_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/ddd2/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/ddd2/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/ddd2/data_provider/data_factory.py", line 104, in data_provider
+  File "/g/data/hn98/du/exlts/ddd2/data_provider/data_loader.py", line 321, in __init__
+    self.__read_data__()  
+  File "/g/data/hn98/du/exlts/ddd2/data_provider/data_loader.py", line 325, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116407926.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems06_all_common_flow.csv'

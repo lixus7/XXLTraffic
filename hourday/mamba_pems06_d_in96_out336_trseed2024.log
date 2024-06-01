@@ -1,0 +1,29 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=130, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems06_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems06_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=336, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 2983
+val 188
+test 709
+Epoch: 1 cost time: 4.0902721881866455
+Epoch: 1, Steps: 93 | Train Loss: 1.0249518 Vali Loss: 0.7883291 Test Loss: 0.7341185
+Validation loss decreased (inf --> 0.788329).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 2.366027593612671
+Epoch: 2, Steps: 93 | Train Loss: 0.7528050 Vali Loss: 0.8287951 Test Loss: 0.7670852
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 2.368091583251953
+Epoch: 3, Steps: 93 | Train Loss: 0.6056407 Vali Loss: 0.8329970 Test Loss: 0.7858769
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 2.4645817279815674
+Epoch: 4, Steps: 93 | Train Loss: 0.5455090 Vali Loss: 0.8479851 Test Loss: 0.7907542
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems06_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 709
+test shape: (709, 1, 336, 130) (709, 1, 336, 130)
+test shape: (709, 336, 130) (709, 336, 130)
+mse:0.7341181039810181, mae:0.5191277861595154
+>>>>>>>Overall time: 29 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

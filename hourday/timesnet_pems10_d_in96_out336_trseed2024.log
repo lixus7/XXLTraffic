@@ -1,0 +1,57 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=107, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems10_d.csv', dec_in=107, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=107, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems10_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems10_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 3847
+val 277
+test 887
+	iters: 100, epoch: 1 | loss: 0.6452149
+	speed: 2.0978s/iter; left time: 3824.2204s
+	iters: 200, epoch: 1 | loss: 0.6933734
+	speed: 2.0126s/iter; left time: 3467.6754s
+	iters: 300, epoch: 1 | loss: 0.4958154
+	speed: 2.0126s/iter; left time: 3266.3773s
+	iters: 400, epoch: 1 | loss: 0.6496659
+	speed: 2.0830s/iter; left time: 3172.3976s
+	iters: 500, epoch: 1 | loss: 0.4425001
+	speed: 2.0883s/iter; left time: 2971.5855s
+	iters: 600, epoch: 1 | loss: 0.5024211
+	speed: 2.0836s/iter; left time: 2756.6662s
+	iters: 700, epoch: 1 | loss: 0.4928861
+	speed: 2.0847s/iter; left time: 2549.6069s
+	iters: 800, epoch: 1 | loss: 0.2852380
+	speed: 2.0851s/iter; left time: 2341.6165s
+	iters: 900, epoch: 1 | loss: 0.4595114
+	speed: 2.0933s/iter; left time: 2141.4366s
+Epoch: 1 cost time: 1993.0333368778229
+Epoch: 1, Steps: 961 | Train Loss: 0.5474712 Vali Loss: 2.2525415 Test Loss: 1.8030603
+Validation loss decreased (inf --> 2.252542).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3168272
+	speed: 8.0387s/iter; left time: 6929.3940s
+	iters: 200, epoch: 2 | loss: 0.2672454
+	speed: 2.1128s/iter; left time: 1609.9684s
+	iters: 300, epoch: 2 | loss: 0.4391923
+	speed: 2.1192s/iter; left time: 1402.9141s
+	iters: 400, epoch: 2 | loss: 0.4033210
+	speed: 2.1287s/iter; left time: 1196.3407s
+	iters: 500, epoch: 2 | loss: 0.2018013
+	speed: 2.1284s/iter; left time: 983.3187s
+	iters: 600, epoch: 2 | loss: 0.5319893
+	speed: 2.1350s/iter; left time: 772.8662s
+	iters: 700, epoch: 2 | loss: 0.2466788
+	speed: 2.1344s/iter; left time: 559.2024s
+	iters: 800, epoch: 2 | loss: 0.2249862
+	speed: 2.1369s/iter; left time: 346.1803s
+	iters: 900, epoch: 2 | loss: 0.2161254
+	speed: 2.1411s/iter; left time: 132.7509s
+Epoch: 2 cost time: 2044.7096374034882
+Epoch: 2, Steps: 961 | Train Loss: 0.2959506 Vali Loss: 2.3296008 Test Loss: 1.8360468
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems10_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 887
+test shape: (887, 1, 336, 107) (887, 1, 336, 107)
+test shape: (887, 336, 107) (887, 336, 107)
+mse:1.8030613660812378, mae:0.8600783944129944
+>>>>>>>Overall time: 5392 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

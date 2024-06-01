@@ -1,0 +1,227 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=130, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems06_d.csv', dec_in=130, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems06_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 3463
+val 428
+test 949
+	iters: 100, epoch: 1 | loss: 0.6436296
+	speed: 1.5202s/iter; left time: 2479.4349s
+	iters: 200, epoch: 1 | loss: 0.5643188
+	speed: 1.5831s/iter; left time: 2423.7687s
+	iters: 300, epoch: 1 | loss: 0.3221925
+	speed: 1.6278s/iter; left time: 2329.3703s
+	iters: 400, epoch: 1 | loss: 0.7755327
+	speed: 1.6482s/iter; left time: 2193.7735s
+	iters: 500, epoch: 1 | loss: 0.3533421
+	speed: 1.6547s/iter; left time: 2036.9647s
+	iters: 600, epoch: 1 | loss: 0.3047295
+	speed: 1.6422s/iter; left time: 1857.3528s
+	iters: 700, epoch: 1 | loss: 0.1882725
+	speed: 1.6038s/iter; left time: 1653.5004s
+	iters: 800, epoch: 1 | loss: 0.2463994
+	speed: 1.5999s/iter; left time: 1489.4936s
+Epoch: 1 cost time: 1393.5665607452393
+Epoch: 1, Steps: 865 | Train Loss: 0.4667333 Vali Loss: 0.7144016 Test Loss: 0.5418885
+Validation loss decreased (inf --> 0.714402).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.8151870
+	speed: 7.1238s/iter; left time: 5456.8026s
+	iters: 200, epoch: 2 | loss: 0.3928442
+	speed: 1.6543s/iter; left time: 1101.7335s
+	iters: 300, epoch: 2 | loss: 0.3049490
+	speed: 1.6670s/iter; left time: 943.5066s
+	iters: 400, epoch: 2 | loss: 0.1340301
+	speed: 1.6941s/iter; left time: 789.4345s
+	iters: 500, epoch: 2 | loss: 0.6182039
+	speed: 1.6809s/iter; left time: 615.1963s
+	iters: 600, epoch: 2 | loss: 0.1466516
+	speed: 1.6795s/iter; left time: 446.7479s
+	iters: 700, epoch: 2 | loss: 0.2553037
+	speed: 1.6687s/iter; left time: 277.0070s
+	iters: 800, epoch: 2 | loss: 0.6604748
+	speed: 1.6488s/iter; left time: 108.8221s
+Epoch: 2 cost time: 1438.5077593326569
+Epoch: 2, Steps: 865 | Train Loss: 0.2769859 Vali Loss: 0.7414932 Test Loss: 0.5479506
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems06_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 949
+test shape: (949, 1, 96, 130) (949, 1, 96, 130)
+test shape: (949, 96, 130) (949, 96, 130)
+mse:0.5418885350227356, mae:0.4197097718715668
+>>>>>>>Overall time: 4128 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=130, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems06_d.csv', dec_in=130, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems06_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_d_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 3367
+val 332
+test 853
+	iters: 100, epoch: 1 | loss: 0.8416615
+	speed: 1.8765s/iter; left time: 2970.4743s
+	iters: 200, epoch: 1 | loss: 0.8152040
+	speed: 1.9529s/iter; left time: 2896.2227s
+	iters: 300, epoch: 1 | loss: 0.9245847
+	speed: 1.9990s/iter; left time: 2764.5581s
+	iters: 400, epoch: 1 | loss: 0.4212731
+	speed: 2.0042s/iter; left time: 2571.4446s
+	iters: 500, epoch: 1 | loss: 0.4463380
+	speed: 2.0093s/iter; left time: 2376.9928s
+	iters: 600, epoch: 1 | loss: 0.4064910
+	speed: 2.0172s/iter; left time: 2184.5886s
+	iters: 700, epoch: 1 | loss: 0.2863104
+	speed: 2.0166s/iter; left time: 1982.3063s
+	iters: 800, epoch: 1 | loss: 0.3535713
+	speed: 2.0099s/iter; left time: 1774.7567s
+Epoch: 1 cost time: 1671.7568202018738
+Epoch: 1, Steps: 841 | Train Loss: 0.6175730 Vali Loss: 0.8561944 Test Loss: 0.6701338
+Validation loss decreased (inf --> 0.856194).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.9579831
+	speed: 6.4209s/iter; left time: 4764.2841s
+	iters: 200, epoch: 2 | loss: 0.7098932
+	speed: 1.9949s/iter; left time: 1280.7184s
+	iters: 300, epoch: 2 | loss: 0.2643689
+	speed: 1.9923s/iter; left time: 1079.8327s
+	iters: 400, epoch: 2 | loss: 0.1673152
+	speed: 1.9918s/iter; left time: 880.3929s
+	iters: 500, epoch: 2 | loss: 0.4797075
+	speed: 1.9958s/iter; left time: 682.5800s
+	iters: 600, epoch: 2 | loss: 0.1691803
+	speed: 2.0038s/iter; left time: 484.9154s
+	iters: 700, epoch: 2 | loss: 0.8078692
+	speed: 1.9966s/iter; left time: 283.5241s
+	iters: 800, epoch: 2 | loss: 0.5184807
+	speed: 2.0000s/iter; left time: 84.0021s
+Epoch: 2 cost time: 1679.0809111595154
+Epoch: 2, Steps: 841 | Train Loss: 0.3481124 Vali Loss: 0.8935216 Test Loss: 0.6787249
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems06_d_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 853
+test shape: (853, 1, 192, 130) (853, 1, 192, 130)
+test shape: (853, 192, 130) (853, 192, 130)
+mse:0.6701346039772034, mae:0.4693325459957123
+>>>>>>>Overall time: 4410 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=130, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems06_d.csv', dec_in=130, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems06_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 3223
+val 188
+test 709
+	iters: 100, epoch: 1 | loss: 1.3549950
+	speed: 1.8087s/iter; left time: 2732.9008s
+	iters: 200, epoch: 1 | loss: 0.9782838
+	speed: 1.6954s/iter; left time: 2392.2732s
+	iters: 300, epoch: 1 | loss: 0.9485809
+	speed: 1.7015s/iter; left time: 2230.7132s
+	iters: 400, epoch: 1 | loss: 0.6301727
+	speed: 1.7607s/iter; left time: 2132.2679s
+	iters: 500, epoch: 1 | loss: 0.8288386
+	speed: 1.7820s/iter; left time: 1979.7859s
+	iters: 600, epoch: 1 | loss: 0.8517268
+	speed: 1.8062s/iter; left time: 1826.0706s
+	iters: 700, epoch: 1 | loss: 0.6146442
+	speed: 1.7935s/iter; left time: 1633.8772s
+	iters: 800, epoch: 1 | loss: 0.5616906
+	speed: 1.8130s/iter; left time: 1470.3405s
+Epoch: 1 cost time: 1426.3718633651733
+Epoch: 1, Steps: 805 | Train Loss: 0.8047495 Vali Loss: 0.8150868 Test Loss: 0.7052361
+Validation loss decreased (inf --> 0.815087).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3895427
+	speed: 5.0399s/iter; left time: 3558.1455s
+	iters: 200, epoch: 2 | loss: 0.9800462
+	speed: 1.8403s/iter; left time: 1115.2045s
+	iters: 300, epoch: 2 | loss: 1.0104557
+	speed: 1.8350s/iter; left time: 928.5044s
+	iters: 400, epoch: 2 | loss: 0.4885453
+	speed: 1.8614s/iter; left time: 755.7144s
+	iters: 500, epoch: 2 | loss: 0.4104011
+	speed: 1.8665s/iter; left time: 571.1343s
+	iters: 600, epoch: 2 | loss: 0.3283710
+	speed: 1.8742s/iter; left time: 386.0789s
+	iters: 700, epoch: 2 | loss: 0.3394342
+	speed: 1.8757s/iter; left time: 198.8262s
+	iters: 800, epoch: 2 | loss: 0.3403515
+	speed: 1.8816s/iter; left time: 11.2896s
+Epoch: 2 cost time: 1496.9067525863647
+Epoch: 2, Steps: 805 | Train Loss: 0.4739765 Vali Loss: 0.8606218 Test Loss: 0.7848391
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems06_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 709
+test shape: (709, 1, 336, 130) (709, 1, 336, 130)
+test shape: (709, 336, 130) (709, 336, 130)
+mse:0.7052368521690369, mae:0.5069658160209656
+>>>>>>>Overall time: 3852 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=130, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems06_d.csv', dec_in=130, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems06_d_96_720', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=720, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_d_96_720_TimesNet_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 2839
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 85, in train
+    vali_data, vali_loader = self._get_data(flag='val')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 85, in data_provider
+    print(flag, len(data_set))
+ValueError: __len__() should return >= 0
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=130, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems06_d.csv', dec_in=130, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=130, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems06_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems06_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 3463
+val 428
+test 949
+	iters: 100, epoch: 1 | loss: 0.6436491
+	speed: 1.5201s/iter; left time: 2479.3415s
+	iters: 200, epoch: 1 | loss: 0.5643094
+	speed: 1.5818s/iter; left time: 2421.8008s
+	iters: 300, epoch: 1 | loss: 0.3229029
+	speed: 1.6221s/iter; left time: 2321.2852s
+	iters: 400, epoch: 1 | loss: 0.7485136
+	speed: 1.6469s/iter; left time: 2192.0503s
+	iters: 500, epoch: 1 | loss: 0.3813637
+	speed: 1.6422s/iter; left time: 2021.5274s
+	iters: 600, epoch: 1 | loss: 0.2968708
+	speed: 1.6325s/iter; left time: 1846.3078s
+	iters: 700, epoch: 1 | loss: 0.1918526
+	speed: 1.6248s/iter; left time: 1675.1754s
+	iters: 800, epoch: 1 | loss: 0.2581669
+	speed: 1.5427s/iter; left time: 1436.2278s
+Epoch: 1 cost time: 1382.219733953476
+Epoch: 1, Steps: 865 | Train Loss: 0.4644398 Vali Loss: 0.7201790 Test Loss: 0.5413254
+Validation loss decreased (inf --> 0.720179).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.8687206
+	speed: 7.0211s/iter; left time: 5378.1298s
+	iters: 200, epoch: 2 | loss: 0.3867104
+	speed: 1.5491s/iter; left time: 1031.6743s
+	iters: 300, epoch: 2 | loss: 0.2851495
+	speed: 1.5482s/iter; left time: 876.2719s
+	iters: 400, epoch: 2 | loss: 0.1348823
+	speed: 1.5665s/iter; left time: 729.9748s
+	iters: 500, epoch: 2 | loss: 0.6168642
+	speed: 1.5431s/iter; left time: 564.7575s
+	iters: 600, epoch: 2 | loss: 0.1467888
+	speed: 1.5493s/iter; left time: 412.1103s
+	iters: 700, epoch: 2 | loss: 0.2555101
+	speed: 1.5669s/iter; left time: 260.1007s
+	iters: 800, epoch: 2 | loss: 0.6816632
+	speed: 1.5727s/iter; left time: 103.7980s
+Epoch: 2 cost time: 1346.4662156105042
+Epoch: 2, Steps: 865 | Train Loss: 0.2777197 Vali Loss: 0.7731403 Test Loss: 0.5733595
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems06_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 949
+test shape: (949, 1, 96, 130) (949, 1, 96, 130)
+test shape: (949, 96, 130) (949, 96, 130)
+mse:0.5413252711296082, mae:0.421434223651886
+>>>>>>>Overall time: 4030 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

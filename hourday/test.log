@@ -1,0 +1,34 @@
+nohup: ignoring input
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=16, c_out=862, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems12_d.csv', dec_in=862, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=4, embed='timeF', enc_in=862, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.001, loss='MSE', lradj='type1', mask_rate=0.25, model='iTransformer', model_id='pems12_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=0.1, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems12_d_96_96_iTransformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el4_dl1_df512_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5489
+val 717
+test 1528
+	iters: 100, epoch: 1 | loss: 0.5374539
+	speed: 0.3024s/iter; left time: 177.4917s
+	iters: 200, epoch: 1 | loss: 0.5508391
+	speed: 0.2977s/iter; left time: 144.9999s
+	iters: 300, epoch: 1 | loss: 0.5242625
+	speed: 0.2979s/iter; left time: 115.2832s
+Epoch: 1 cost time: 102.6989233493805
+Epoch: 1, Steps: 343 | Train Loss: 0.5303373 Vali Loss: 0.5464709 Test Loss: 1.3724816
+Validation loss decreased (inf --> 0.546471).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 2 | loss: 0.5274705
+	speed: 0.6527s/iter; left time: 159.2641s
+	iters: 200, epoch: 2 | loss: 0.4961079
+	speed: 0.2979s/iter; left time: 42.8992s
+	iters: 300, epoch: 2 | loss: 0.5667964
+	speed: 0.2976s/iter; left time: 13.0955s
+Epoch: 2 cost time: 102.48632955551147
+Epoch: 2, Steps: 343 | Train Loss: 0.5064856 Vali Loss: 0.5375723 Test Loss: 1.3669677
+Validation loss decreased (0.546471 --> 0.537572).  Saving model ...
+Updating learning rate to 0.0005
+>>>>>>>testing : long_term_forecast_pems12_d_96_96_iTransformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el4_dl1_df512_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1528
+test shape: (1528, 1, 96, 1543) (1528, 1, 96, 1543)
+test shape: (1528, 96, 1543) (1528, 96, 1543)
+mse:1.3669682741165161, mae:0.5022487044334412
+>>>>>>>Overall time: 276 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

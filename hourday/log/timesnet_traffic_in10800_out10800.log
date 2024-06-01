@@ -1,0 +1,32 @@
+nohup: ignoring input
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=151, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems03_all_common_flow.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=151, factor=3, features='M', freq='h', gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='traffic_168_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=10800, root_path='../../data/pems/', seasonal_patterns='Monthly', seq_len=10800, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_traffic_168_336_TimesNet_custom_ftM_sl10800_ll48_pl10800_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1582788
+val 218400
+test 447597
+Traceback (most recent call last):
+  File "run.py", line 147, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/dddtimesnet/exp/exp_long_term_forecasting.py", line 143, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+  File "/jobfs/115974024.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/models/TimesNet.py", line 203, in forward
+    dec_out = self.forecast(x_enc, x_mark_enc, x_dec, x_mark_dec)
+  File "/g/data/hn98/du/exlts/dddtimesnet/models/TimesNet.py", line 117, in forecast
+    enc_out = self.layer_norm(self.model[i](enc_out))
+  File "/jobfs/115974024.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/models/TimesNet.py", line 56, in forward
+    out = self.conv(out)
+  File "/jobfs/115974024.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/jobfs/115974024.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/container.py", line 117, in forward
+    input = module(input)
+  File "/jobfs/115974024.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/layers/Conv_Blocks.py", line 29, in forward
+    res = torch.stack(res_list, dim=-1).mean(-1)
+RuntimeError: CUDA out of memory. Tried to allocate 1014.00 MiB (GPU 0; 31.73 GiB total capacity; 28.96 GiB already allocated; 948.69 MiB free; 29.62 GiB reserved in total by PyTorch)

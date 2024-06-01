@@ -1,0 +1,216 @@
+Args in experiment:Args in experiment:
+
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=1543, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems12_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=1543, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems12_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=1543, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems12_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=1543, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems12_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=336, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+Use GPU: cuda:0
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=1543, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems12_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=1543, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems12_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=192, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems12_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>start training : long_term_forecast_pems12_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>start training : long_term_forecast_pems12_d_96_192_Mamba_custom_ftM_sl192_ll48_pl192_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5009
+train 5297
+train 5489
+val 477
+val 717
+val 621
+test 1288
+test 1432
+test 1528
+Traceback (most recent call last):
+  File "run.py", line 160, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 146, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 47, in forward
+    x_out = self.forecast(x_enc, x_mark_enc)
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 38, in forecast
+    x = self.embedding(x_enc, x_mark_enc)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/layers/Embed.py", line 124, in forward
+    x = self.value_embedding(
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/layers/Embed.py", line 41, in forward
+    x = self.tokenConv(x.permute(0, 2, 1)).transpose(1, 2)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 307, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 300, in _conv_forward
+    return F.conv1d(F.pad(input, self._reversed_padding_repeated_twice, mode=self.padding_mode),
+RuntimeError: Given groups=1, weight of size [128, 1543, 3], expected input[32, 867, 98] to have 1543 channels, but got 867 channels instead
+Traceback (most recent call last):
+  File "run.py", line 160, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 146, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 47, in forward
+    x_out = self.forecast(x_enc, x_mark_enc)
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 38, in forecast
+    x = self.embedding(x_enc, x_mark_enc)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/layers/Embed.py", line 124, in forward
+    x = self.value_embedding(
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/layers/Embed.py", line 41, in forward
+    x = self.tokenConv(x.permute(0, 2, 1)).transpose(1, 2)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 307, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 300, in _conv_forward
+    return F.conv1d(F.pad(input, self._reversed_padding_repeated_twice, mode=self.padding_mode),
+RuntimeError: Given groups=1, weight of size [128, 1543, 3], expected input[32, 867, 194] to have 1543 channels, but got 867 channels instead
+Traceback (most recent call last):
+  File "run.py", line 160, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 146, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 47, in forward
+    x_out = self.forecast(x_enc, x_mark_enc)
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 38, in forecast
+    x = self.embedding(x_enc, x_mark_enc)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/layers/Embed.py", line 124, in forward
+    x = self.value_embedding(
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/hourdayweek/layers/Embed.py", line 41, in forward
+    x = self.tokenConv(x.permute(0, 2, 1)).transpose(1, 2)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 307, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/jobfs/116870480.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 300, in _conv_forward
+    return F.conv1d(F.pad(input, self._reversed_padding_repeated_twice, mode=self.padding_mode),
+RuntimeError: Given groups=1, weight of size [128, 1543, 3], expected input[32, 867, 338] to have 1543 channels, but got 867 channels instead
+Args in experiment:Args in experiment:Args in experiment:
+
+
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=867, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems12_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=867, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems12_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=192, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=867, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems12_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=867, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems12_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=867, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems12_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=867, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems12_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=336, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+
+Use GPU: cuda:0
+Use GPU: cuda:0Use GPU: cuda:0
+
+>>>>>>>start training : long_term_forecast_pems12_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>start training : long_term_forecast_pems12_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>start training : long_term_forecast_pems12_d_96_192_Mamba_custom_ftM_sl192_ll48_pl192_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5489
+train 5297
+train 5009
+val 717
+val 621
+val 477
+test 1528
+test 1432
+test 1288
+	iters: 100, epoch: 1 | loss: 0.5649850
+	speed: 0.0533s/iter; left time: 85.9186s
+Epoch: 1 cost time: 7.503624439239502
+	iters: 100, epoch: 1 | loss: 0.7295084
+	speed: 0.0781s/iter; left time: 121.1056s
+Epoch: 1 cost time: 11.267457723617554
+	iters: 100, epoch: 1 | loss: 0.7187983
+	speed: 0.1419s/iter; left time: 207.2470s
+Epoch: 1, Steps: 171 | Train Loss: 0.6481992 Vali Loss: 0.6094635 Test Loss: 1.3542876
+Validation loss decreased (inf --> 0.609464).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.4962376
+	speed: 0.1383s/iter; left time: 199.1912s
+Epoch: 1 cost time: 20.769190549850464
+Epoch: 1, Steps: 165 | Train Loss: 0.7629585 Vali Loss: 0.7927966 Test Loss: 1.7217298
+Validation loss decreased (inf --> 0.792797).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 6.181166887283325
+	iters: 100, epoch: 2 | loss: 0.5894337
+	speed: 0.1933s/iter; left time: 267.9231s
+Epoch: 2, Steps: 171 | Train Loss: 0.5189744 Vali Loss: 0.6089298 Test Loss: 1.3725671
+Validation loss decreased (0.609464 --> 0.608930).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 2 cost time: 9.80747938156128
+	iters: 100, epoch: 3 | loss: 0.5067940
+	speed: 0.1381s/iter; left time: 175.2145s
+Epoch: 1, Steps: 156 | Train Loss: 0.8137997 Vali Loss: 0.8948213 Test Loss: 2.0661762
+Validation loss decreased (inf --> 0.894821).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 3 cost time: 6.389312982559204
+Epoch: 2, Steps: 165 | Train Loss: 0.5939679 Vali Loss: 0.8060613 Test Loss: 1.7786524
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+Epoch: 3, Steps: 171 | Train Loss: 0.4828378 Vali Loss: 0.6122458 Test Loss: 1.3813400
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 2 | loss: 0.5131710
+	speed: 0.2919s/iter; left time: 380.8907s
+	iters: 100, epoch: 4 | loss: 0.4323301
+	speed: 0.1413s/iter; left time: 155.1042s
+	iters: 100, epoch: 3 | loss: 0.5212089
+	speed: 0.2079s/iter; left time: 253.7861s
+Epoch: 2 cost time: 13.4399733543396
+Epoch: 4 cost time: 6.455185174942017
+Epoch: 3 cost time: 9.810832738876343
+Epoch: 4, Steps: 171 | Train Loss: 0.4670404 Vali Loss: 0.6131134 Test Loss: 1.3844439
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.4246016
+	speed: 0.1396s/iter; left time: 129.3978s
+Epoch: 2, Steps: 156 | Train Loss: 0.5867819 Vali Loss: 0.9032099 Test Loss: 2.0795083
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+Epoch: 5 cost time: 5.9798033237457275
+Epoch: 3, Steps: 165 | Train Loss: 0.5335887 Vali Loss: 0.8093562 Test Loss: 1.7880495
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.4601039
+	speed: 0.2193s/iter; left time: 231.6008s
+	iters: 100, epoch: 3 | loss: 0.4741212
+	speed: 0.2724s/iter; left time: 312.9595s
+Epoch: 5, Steps: 171 | Train Loss: 0.4598497 Vali Loss: 0.6135857 Test Loss: 1.3830342
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems12_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1528
+Epoch: 4 cost time: 9.636835813522339
+Epoch: 3 cost time: 13.679932117462158
+test shape: (1528, 1, 96, 867) (1528, 1, 96, 867)
+test shape: (1528, 96, 867) (1528, 96, 867)
+mse:1.3725650310516357, mae:0.6211175322532654
+>>>>>>>Overall time: 84 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Epoch: 4, Steps: 165 | Train Loss: 0.5081482 Vali Loss: 0.8171983 Test Loss: 1.7900637
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems12_d_96_192_Mamba_custom_ftM_sl192_ll48_pl192_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1432
+Epoch: 3, Steps: 156 | Train Loss: 0.4884373 Vali Loss: 0.9104505 Test Loss: 2.0928173
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+test shape: (1432, 1, 192, 867) (1432, 1, 192, 867)
+test shape: (1432, 192, 867) (1432, 192, 867)
+mse:1.7217215299606323, mae:0.725722074508667
+>>>>>>>Overall time: 100 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	iters: 100, epoch: 4 | loss: 0.4261517
+	speed: 0.2598s/iter; left time: 257.9576s
+Epoch: 4 cost time: 13.198950290679932
+Epoch: 4, Steps: 156 | Train Loss: 0.4492451 Vali Loss: 0.9143707 Test Loss: 2.1007750
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems12_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1288
+test shape: (1288, 1, 336, 867) (1288, 1, 336, 867)
+test shape: (1288, 336, 867) (1288, 336, 867)
+mse:2.0661823749542236, mae:0.8230535984039307
+>>>>>>>Overall time: 133 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

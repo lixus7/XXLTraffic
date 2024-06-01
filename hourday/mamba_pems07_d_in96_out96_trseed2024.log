@@ -1,0 +1,50 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=1613, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems07_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=1613, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems07_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp = Exp(args)  # set experiments
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 21, in __init__
+    super(Exp_Long_Term_Forecast, self).__init__(args)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_basic.py", line 33, in __init__
+    self.model = self._build_model().to(self.device)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 24, in _build_model
+    model = self.model_dict[self.args.model].Model(self.args).float()
+KeyError: 'Mamba'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=1613, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems07_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=1613, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems07_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems07_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5383
+val 703
+test 1497
+	iters: 100, epoch: 1 | loss: 0.6268594
+	speed: 0.0707s/iter; left time: 111.8269s
+Epoch: 1 cost time: 10.225376605987549
+Epoch: 1, Steps: 168 | Train Loss: 0.7168253 Vali Loss: 0.9389092 Test Loss: 1.7193321
+Validation loss decreased (inf --> 0.938909).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.6022444
+	speed: 0.1881s/iter; left time: 265.8547s
+Epoch: 2 cost time: 8.960129976272583
+Epoch: 2, Steps: 168 | Train Loss: 0.5853936 Vali Loss: 0.9481132 Test Loss: 1.7348288
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.5362496
+	speed: 0.1917s/iter; left time: 238.6654s
+Epoch: 3 cost time: 9.00179672241211
+Epoch: 3, Steps: 168 | Train Loss: 0.5473959 Vali Loss: 0.9551829 Test Loss: 1.7425941
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.5363406
+	speed: 0.1937s/iter; left time: 208.5963s
+Epoch: 4 cost time: 9.012671947479248
+Epoch: 4, Steps: 168 | Train Loss: 0.5318768 Vali Loss: 0.9554411 Test Loss: 1.7435412
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems07_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1497
+test shape: (1497, 1, 96, 1613) (1497, 1, 96, 1613)
+test shape: (1497, 96, 1613) (1497, 96, 1613)
+mse:1.7193264961242676, mae:0.735721230506897
+>>>>>>>Overall time: 96 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

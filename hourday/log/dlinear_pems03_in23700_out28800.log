@@ -1,0 +1,9 @@
+nohup: ignoring input
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=151, checkpoints='./checkpoints/', d_ff=2048, d_layers=1, d_model=512, data='custom', data_path='pems03_all_common_flow.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=151, factor=3, features='M', freq='h', gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0005, loss='MSE', lradj='type3', mask_rate=0.25, model='DLinear', model_id='traffic_1680_3360', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=5, pred_len=28800, root_path='../../data/pems/', seasonal_patterns='Monthly', seq_len=23700, target='', task_name='long_term_forecast', top_k=5, train_epochs=200, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_traffic_1680_3360_DLinear_custom_ftM_sl23700_ll48_pl28800_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1551888
+val 200400
+test 429597
+./scripts/long_term_forecast/pems03_script/DLinear.sh: line 29: 2815190 Terminated              python -u run.py --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems03_all_common_flow.csv --model_id traffic_1680_3360 --model $model_name --data custom --target '' --features M --seq_len 23700 --label_len 48 --pred_len 28800 --e_layers 2 --d_layers 1 --factor 3 --enc_in 151 --dec_in 151 --c_out 151 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3'

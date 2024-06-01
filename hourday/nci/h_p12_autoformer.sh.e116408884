@@ -1,0 +1,32 @@
+
+------------------------------------------------------------------------
+Job 116408884 has exceeded memory allocation on node gadi-gpu-v100-0125.gadi.nci.org.au
+Process "bash", pid 2755109, rss 3497984, vmem 241713152
+Process "116408884.gadi-", pid 2755183, rss 3145728, vmem 228139008
+Process "python", pid 2755228, rss 61094776832, vmem 93848956928
+Process "torch_shm_manag", pid 2755263, rss 30396416, vmem 1365356544
+Process "torch_shm_manag", pid 2755264, rss 31686656, vmem 1365356544
+Process "torch_shm_manag", pid 2755265, rss 31502336, vmem 1365356544
+Process "torch_shm_manag", pid 2755266, rss 31059968, vmem 1365356544
+Process "torch_shm_manag", pid 2755267, rss 30720000, vmem 1365356544
+Process "torch_shm_manag", pid 2755268, rss 30969856, vmem 1365356544
+Process "torch_shm_manag", pid 2755269, rss 30240768, vmem 1365356544
+Process "torch_shm_manag", pid 2755270, rss 31064064, vmem 1365356544
+Process "torch_shm_manag", pid 2755271, rss 31211520, vmem 1365356544
+Process "torch_shm_manag", pid 2755272, rss 31080448, vmem 1365356544
+Process "python", pid 2756887, rss 7419346944, vmem 18459652096
+Process "python", pid 2756888, rss 7421157376, vmem 18461499392
+Process "python", pid 2756889, rss 7420841984, vmem 18461773824
+Process "python", pid 2756890, rss 7420784640, vmem 18461786112
+Process "python", pid 2756891, rss 7421206528, vmem 18461798400
+Process "python", pid 2756892, rss 7421046784, vmem 18461810688
+Process "python", pid 2756893, rss 7421739008, vmem 18461822976
+Process "python", pid 2756894, rss 7421431808, vmem 18461835264
+Process "python", pid 2756895, rss 7421059072, vmem 18461847552
+Process "python", pid 2756896, rss 7420919808, vmem 18461859840
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/116408884.gadi-pbs.SC: line 53: 2755228 Killed                  python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems12_h.csv --model_id pems12_h_96_96 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 96 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 1543 --dec_in 1543 --c_out 1543 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems12_h_in96_out96_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/116408884.gadi-pbs.SC: line 109: 2762504 Aborted                 python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems12_h.csv --model_id pems12_h_96_336 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 336 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 1543 --dec_in 1543 --c_out 1543 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems12_h_in96_out336_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/116408884.gadi-pbs.SC: line 137: 2762774 Aborted                 python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems12_h.csv --model_id pems12_h_96_720 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 720 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 1543 --dec_in 1543 --c_out 1543 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems12_h_in96_out720_trseed2024.log 2>&1

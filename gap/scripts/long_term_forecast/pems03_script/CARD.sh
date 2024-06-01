@@ -1,0 +1,115 @@
+export CUDA_VISIBLE_DEVICES=2
+
+model_name=CARD
+
+python -u CARD_run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./dataset/traffic/ \
+  --data_path traffic.csv \
+  --model_id traffic_168_3 \
+  --model $model_name \
+  --data custom \
+  --features M \
+  --seq_len 168 \
+  --label_len 48 \
+  --pred_len 3 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 862 \
+  --dec_in 862 \
+  --c_out 862 \
+  --top_k 5 \
+  --des 'Exp' \
+  --itr 1 \
+  --e_layers 2 \
+  --n_heads 16 \
+  --d_model 128 \
+  --d_ff 256 \
+  --dropout 0.2\
+  --fc_dropout 0.2\
+  --head_dropout 0\
+  --patch_len 16\
+  --stride 8\
+  --batch_size 4 \
+  --learning_rate 0.0001 \
+  --itr 1 \
+  --train_epoch 200 \
+  --patience 5 \
+  --dp_rank 8 \
+  --lradj 'type3'
+
+
+python -u CARD_run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./dataset/traffic/ \
+  --data_path traffic.csv \
+  --model_id traffic_168_24 \
+  --model $model_name \
+  --data custom \
+  --features M \
+  --seq_len 168 \
+  --label_len 48 \
+  --pred_len 24 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 862 \
+  --dec_in 862 \
+  --c_out 862 \
+  --top_k 5 \
+  --des 'Exp' \
+  --itr 1 \
+  --e_layers 2 \
+  --n_heads 16 \
+  --d_model 128 \
+  --d_ff 256 \
+  --dropout 0.2\
+  --fc_dropout 0.2\
+  --head_dropout 0\
+  --patch_len 16\
+  --stride 8\
+  --batch_size 4 \
+  --learning_rate 0.0001 \
+  --itr 1 \
+  --train_epoch 200 \
+  --patience 5 \
+  --dp_rank 8 \
+  --lradj 'type3'
+
+python -u CARD_run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./dataset/traffic/ \
+  --data_path traffic.csv \
+  --model_id traffic_168_96 \
+  --model $model_name \
+  --data custom \
+  --features M \
+  --seq_len 168 \
+  --label_len 48 \
+  --pred_len 96 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 862 \
+  --dec_in 862 \
+  --c_out 862 \
+  --top_k 5 \
+  --des 'Exp' \
+  --itr 1 \
+  --e_layers 2 \
+  --n_heads 16 \
+  --d_model 128 \
+  --d_ff 256 \
+  --dropout 0.2\
+  --fc_dropout 0.2\
+  --head_dropout 0\
+  --patch_len 16\
+  --stride 8\
+  --batch_size 4 \
+  --learning_rate 0.0001 \
+  --itr 1 \
+  --train_epoch 200 \
+  --patience 5 \
+  --dp_rank 8 \
+  --lradj 'type3'

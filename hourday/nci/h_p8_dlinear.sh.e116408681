@@ -1,0 +1,21 @@
+
+------------------------------------------------------------------------
+Job 116408681 has exceeded memory allocation on node gadi-gpu-v100-0077.gadi.nci.org.au
+Process "bash", pid 2963646, rss 3637248, vmem 241713152
+Process "116408681.gadi-", pid 2963720, rss 3297280, vmem 228139008
+Process "python", pid 2966005, rss 64088227840, vmem 77638885376
+Process "torch_shm_manag", pid 2966035, rss 31989760, vmem 1365356544
+Process "torch_shm_manag", pid 2966036, rss 32391168, vmem 1365356544
+Process "torch_shm_manag", pid 2966037, rss 32538624, vmem 1365356544
+Process "torch_shm_manag", pid 2966038, rss 32321536, vmem 1365356544
+Process "torch_shm_manag", pid 2966039, rss 32174080, vmem 1365356544
+Process "torch_shm_manag", pid 2966040, rss 32460800, vmem 1365356544
+Process "torch_shm_manag", pid 2966041, rss 32432128, vmem 1365356544
+Process "torch_shm_manag", pid 2966042, rss 30990336, vmem 1365356544
+Process "torch_shm_manag", pid 2966043, rss 32038912, vmem 1365356544
+Process "torch_shm_manag", pid 2966044, rss 31240192, vmem 1365356544
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/116408681.gadi-pbs.SC: line 110: 2966005 Killed                  python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems08_h.csv --model_id pems08_h_96_336 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 48 --pred_len 336 --e_layers 2 --d_layers 1 --factor 3 --enc_in 212 --dec_in 212 --c_out 212 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> dlinear_pems08_h_in96_out336_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/116408681.gadi-pbs.SC: line 139: 2967206 Killed                  python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems08_h.csv --model_id pems08_h_96_720 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 48 --pred_len 720 --e_layers 2 --d_layers 1 --factor 3 --enc_in 212 --dec_in 212 --c_out 212 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> dlinear_pems08_h_in96_out720_trseed2024.log 2>&1

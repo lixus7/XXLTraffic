@@ -1,0 +1,38 @@
+nohup: ignoring input
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=151, checkpoints='./checkpoints/', d_ff=2048, d_layers=1, d_model=128, data='custom', data_path='pems03_all_common_flow.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=151, factor=3, features='M', freq='h', gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0005, loss='MSE', lradj='type3', mask_rate=0.25, model='Autoformer', model_id='traffic_168_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=5, pred_len=6800, root_path='../../data/pems/', seasonal_patterns='Monthly', seq_len=6800, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=200, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_traffic_168_96_Autoformer_custom_ftM_sl6800_ll48_pl6800_dm128_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1590788
+val 222400
+test 451597
+Traceback (most recent call last):
+  File "run.py", line 147, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/dddtimesnet/exp/exp_long_term_forecasting.py", line 143, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+  File "/jobfs/116050595.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/models/Autoformer.py", line 147, in forward
+    dec_out = self.forecast(x_enc, x_mark_enc, x_dec, x_mark_dec)
+  File "/g/data/hn98/du/exlts/dddtimesnet/models/Autoformer.py", line 106, in forecast
+    seasonal_part, trend_part = self.decoder(dec_out, enc_out, x_mask=None, cross_mask=None,
+  File "/jobfs/116050595.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/layers/Autoformer_EncDec.py", line 195, in forward
+    x, residual_trend = layer(x, cross, x_mask=x_mask, cross_mask=cross_mask)
+  File "/jobfs/116050595.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/layers/Autoformer_EncDec.py", line 167, in forward
+    x = x + self.dropout(self.cross_attention(
+  File "/jobfs/116050595.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/layers/AutoCorrelation.py", line 155, in forward
+    out, attn = self.inner_correlation(
+  File "/jobfs/116050595.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/g/data/hn98/du/exlts/dddtimesnet/layers/AutoCorrelation.py", line 121, in forward
+    V = self.time_delay_agg_training(values.permute(0, 2, 3, 1).contiguous(), corr).permute(0, 3, 1, 2)
+  File "/g/data/hn98/du/exlts/dddtimesnet/layers/AutoCorrelation.py", line 47, in time_delay_agg_training
+    delays_agg = delays_agg + pattern * \
+RuntimeError: CUDA out of memory. Tried to allocate 108.00 MiB (GPU 0; 31.73 GiB total capacity; 30.24 GiB already allocated; 40.69 MiB free; 30.51 GiB reserved in total by PyTorch)

@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "run.py", line 4, in <module>
+    from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 2, in <module>
+    from exp.exp_basic import Exp_Basic
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_basic.py", line 3, in <module>
+    from models import Autoformer, Transformer, TimesNet, Nonstationary_Transformer, DLinear, FEDformer, \
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 7, in <module>
+    from mamba_ssm import Mamba
+ModuleNotFoundError: No module named 'mamba_ssm'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=103, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems05_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=103, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems05_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems05_d_96_336_Mamba_custom_ftM_sl96_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 2646
+val 106
+test 544
+Traceback (most recent call last):
+  File "run.py", line 160, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 187, in train
+    loss = criterion(outputs, batch_y) 
+  File "/jobfs/116868705.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/jobfs/116868705.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/modules/loss.py", line 530, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/jobfs/116868705.gadi-pbs/mamba/lib/python3.8/site-packages/torch/nn/functional.py", line 3279, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/jobfs/116868705.gadi-pbs/mamba/lib/python3.8/site-packages/torch/functional.py", line 73, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (96) must match the size of tensor b (336) at non-singleton dimension 1
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=103, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems05_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=103, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems05_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=336, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems05_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 2406
+val 106
+test 544
+Epoch: 1 cost time: 3.878049373626709
+Epoch: 1, Steps: 75 | Train Loss: 0.9340997 Vali Loss: 1.6985474 Test Loss: 0.8836064
+Validation loss decreased (inf --> 1.698547).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 2.096283435821533
+Epoch: 2, Steps: 75 | Train Loss: 0.7523068 Vali Loss: 1.4883434 Test Loss: 0.9069471
+Validation loss decreased (1.698547 --> 1.488343).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 2.1547629833221436
+Epoch: 3, Steps: 75 | Train Loss: 0.6197171 Vali Loss: 1.6396240 Test Loss: 0.9016659
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 2.1157569885253906
+Epoch: 4, Steps: 75 | Train Loss: 0.5656449 Vali Loss: 1.6389359 Test Loss: 0.9160473
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 2.0369949340820312
+Epoch: 5, Steps: 75 | Train Loss: 0.5431886 Vali Loss: 1.6514620 Test Loss: 0.9164295
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems05_d_96_336_Mamba_custom_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 544
+test shape: (544, 1, 336, 103) (544, 1, 336, 103)
+test shape: (544, 336, 103) (544, 336, 103)
+mse:0.9069474339485168, mae:0.6143641471862793
+>>>>>>>Overall time: 32 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

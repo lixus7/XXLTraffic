@@ -1,0 +1,562 @@
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_720', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=720, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_720_TimesNet_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116408136.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_720', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=720, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_720_TimesNet_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 84, in train
+    train_data, train_loader = self._get_data(flag='train')
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 31, in _get_data
+    data_set, data_loader = data_provider(self.args, flag)
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_factory.py", line 74, in data_provider
+    data_set = Data(
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 320, in __init__
+    self.__read_data__()
+  File "/g/data/hn98/du/exlts/hourdayweek/data_provider/data_loader.py", line 324, in __read_data__
+    df_raw = pd.read_csv(os.path.join(self.root_path,
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/jobfs/116443180.gadi-pbs/timesnet/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/pems/pems04_d.csv'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5383
+val 703
+test 1497
+	iters: 100, epoch: 1 | loss: 0.4932188
+	speed: 1.5264s/iter; left time: 3954.8141s
+	iters: 200, epoch: 1 | loss: 0.5315345
+	speed: 1.5407s/iter; left time: 3837.8926s
+	iters: 300, epoch: 1 | loss: 0.7951403
+	speed: 1.5401s/iter; left time: 3682.3087s
+	iters: 400, epoch: 1 | loss: 0.8129996
+	speed: 1.4862s/iter; left time: 3404.9610s
+	iters: 500, epoch: 1 | loss: 0.6398776
+	speed: 1.5758s/iter; left time: 3452.5038s
+	iters: 600, epoch: 1 | loss: 0.6120303
+	speed: 1.6040s/iter; left time: 3353.9399s
+	iters: 700, epoch: 1 | loss: 0.5582665
+	speed: 1.6532s/iter; left time: 3291.4428s
+	iters: 800, epoch: 1 | loss: 0.8046183
+	speed: 1.6498s/iter; left time: 3119.6800s
+	iters: 900, epoch: 1 | loss: 0.5247168
+	speed: 1.6491s/iter; left time: 2953.5478s
+	iters: 1000, epoch: 1 | loss: 0.3681029
+	speed: 1.6306s/iter; left time: 2757.3092s
+	iters: 1100, epoch: 1 | loss: 0.4712971
+	speed: 1.6326s/iter; left time: 2597.4591s
+	iters: 1200, epoch: 1 | loss: 0.2667415
+	speed: 1.6611s/iter; left time: 2476.7400s
+	iters: 1300, epoch: 1 | loss: 0.9148169
+	speed: 1.6817s/iter; left time: 2339.1802s
+Epoch: 1 cost time: 2159.4510684013367
+Epoch: 1, Steps: 1345 | Train Loss: 0.5530159 Vali Loss: 0.3870784 Test Loss: 0.6069809
+Validation loss decreased (inf --> 0.387078).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2309012
+	speed: 8.0512s/iter; left time: 10031.7576s
+	iters: 200, epoch: 2 | loss: 0.6740717
+	speed: 1.5652s/iter; left time: 1793.7748s
+	iters: 300, epoch: 2 | loss: 0.3813983
+	speed: 1.5557s/iter; left time: 1627.2769s
+	iters: 400, epoch: 2 | loss: 0.5449589
+	speed: 1.5368s/iter; left time: 1453.8198s
+	iters: 500, epoch: 2 | loss: 0.6118642
+	speed: 1.5012s/iter; left time: 1270.0381s
+	iters: 600, epoch: 2 | loss: 0.5030468
+	speed: 1.4966s/iter; left time: 1116.4679s
+	iters: 700, epoch: 2 | loss: 0.4023441
+	speed: 1.5054s/iter; left time: 972.4706s
+	iters: 800, epoch: 2 | loss: 0.7691409
+	speed: 1.5393s/iter; left time: 840.4711s
+	iters: 900, epoch: 2 | loss: 0.4307365
+	speed: 1.5428s/iter; left time: 688.0974s
+	iters: 1000, epoch: 2 | loss: 0.4446518
+	speed: 1.5288s/iter; left time: 528.9511s
+	iters: 1100, epoch: 2 | loss: 0.6484771
+	speed: 1.4812s/iter; left time: 364.3815s
+	iters: 1200, epoch: 2 | loss: 0.4384528
+	speed: 1.5052s/iter; left time: 219.7540s
+	iters: 1300, epoch: 2 | loss: 0.3391955
+	speed: 1.5059s/iter; left time: 69.2707s
+Epoch: 2 cost time: 2060.615903377533
+Epoch: 2, Steps: 1345 | Train Loss: 0.4834083 Vali Loss: 0.3903973 Test Loss: 0.6094106
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems04_d_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1497
+test shape: (1497, 1, 96, 822) (1497, 1, 96, 822)
+test shape: (1497, 96, 822) (1497, 96, 822)
+mse:0.6069795489311218, mae:0.46498218178749084
+>>>>>>>Overall time: 5839 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_192', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=192, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5287
+val 607
+test 1401
+	iters: 100, epoch: 1 | loss: 0.7659845
+	speed: 1.9875s/iter; left time: 5054.0948s
+	iters: 200, epoch: 1 | loss: 0.6403648
+	speed: 2.0915s/iter; left time: 5109.4589s
+	iters: 300, epoch: 1 | loss: 0.4877547
+	speed: 2.1083s/iter; left time: 4939.8602s
+	iters: 400, epoch: 1 | loss: 0.6054180
+	speed: 2.1570s/iter; left time: 4838.1425s
+	iters: 500, epoch: 1 | loss: 0.7043217
+	speed: 2.2017s/iter; left time: 4718.2143s
+	iters: 600, epoch: 1 | loss: 0.3596371
+	speed: 2.2344s/iter; left time: 4564.8813s
+	iters: 700, epoch: 1 | loss: 0.7928362
+	speed: 2.2442s/iter; left time: 4360.4288s
+	iters: 800, epoch: 1 | loss: 0.8141413
+	speed: 2.2641s/iter; left time: 4172.6564s
+	iters: 900, epoch: 1 | loss: 0.5313175
+	speed: 2.2748s/iter; left time: 3964.9958s
+	iters: 1000, epoch: 1 | loss: 0.6193532
+	speed: 2.2609s/iter; left time: 3714.6310s
+	iters: 1100, epoch: 1 | loss: 0.4069258
+	speed: 2.2437s/iter; left time: 3462.0061s
+	iters: 1200, epoch: 1 | loss: 0.3761170
+	speed: 2.2438s/iter; left time: 3237.8114s
+	iters: 1300, epoch: 1 | loss: 0.7097215
+	speed: 2.2295s/iter; left time: 2994.1883s
+Epoch: 1 cost time: 2902.6168541908264
+Epoch: 1, Steps: 1321 | Train Loss: 0.6219360 Vali Loss: 0.4365816 Test Loss: 0.6857449
+Validation loss decreased (inf --> 0.436582).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.5841051
+	speed: 8.9436s/iter; left time: 10929.0717s
+	iters: 200, epoch: 2 | loss: 0.3838451
+	speed: 2.2531s/iter; left time: 2527.9540s
+	iters: 300, epoch: 2 | loss: 0.3380516
+	speed: 2.2675s/iter; left time: 2317.3997s
+	iters: 400, epoch: 2 | loss: 0.7240137
+	speed: 2.2555s/iter; left time: 2079.5818s
+	iters: 500, epoch: 2 | loss: 0.5368450
+	speed: 2.2546s/iter; left time: 1853.2582s
+	iters: 600, epoch: 2 | loss: 0.4218296
+	speed: 2.2655s/iter; left time: 1635.6736s
+	iters: 700, epoch: 2 | loss: 0.5810541
+	speed: 2.2706s/iter; left time: 1412.3345s
+	iters: 800, epoch: 2 | loss: 0.6669473
+	speed: 2.2707s/iter; left time: 1185.3132s
+	iters: 900, epoch: 2 | loss: 0.3886417
+	speed: 2.2768s/iter; left time: 960.7903s
+	iters: 1000, epoch: 2 | loss: 0.4681517
+	speed: 2.2673s/iter; left time: 730.0642s
+	iters: 1100, epoch: 2 | loss: 0.3606834
+	speed: 2.2682s/iter; left time: 503.5420s
+	iters: 1200, epoch: 2 | loss: 0.3417097
+	speed: 2.2622s/iter; left time: 275.9927s
+	iters: 1300, epoch: 2 | loss: 0.4430276
+	speed: 2.2630s/iter; left time: 49.7856s
+Epoch: 2 cost time: 2990.195066213608
+Epoch: 2, Steps: 1321 | Train Loss: 0.5377819 Vali Loss: 0.4436584 Test Loss: 0.7073144
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems04_d_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1401
+Traceback (most recent call last):
+  File "run.py", line 161, in <module>
+    exp.test(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 286, in test
+    visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
+  File "/g/data/hn98/du/exlts/hourdayweek/utils/tools.py", line 89, in visual
+    plt.savefig(name, bbox_inches='tight')
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/matplotlib/pyplot.py", line 996, in savefig
+    res = fig.savefig(*args, **kwargs)
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/matplotlib/figure.py", line 3328, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/matplotlib/backend_bases.py", line 2362, in print_figure
+    result = print_method(
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/matplotlib/backend_bases.py", line 2228, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/matplotlib/backends/backend_pdf.py", line 2823, in print_pdf
+    file.close()
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/matplotlib/backends/backend_pdf.py", line 890, in close
+    self.fh.close()
+OSError: [Errno 122] Disk quota exceeded
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_336', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=336, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5143
+val 463
+test 1257
+	iters: 100, epoch: 1 | loss: 0.5219700
+	speed: 1.9736s/iter; left time: 4876.8803s
+	iters: 200, epoch: 1 | loss: 0.6352084
+	speed: 1.9262s/iter; left time: 4567.1080s
+	iters: 300, epoch: 1 | loss: 1.1757697
+	speed: 1.8010s/iter; left time: 4090.1037s
+	iters: 400, epoch: 1 | loss: 0.6221667
+	speed: 1.7626s/iter; left time: 3826.6138s
+	iters: 500, epoch: 1 | loss: 0.7943702
+	speed: 1.7510s/iter; left time: 3626.3736s
+	iters: 600, epoch: 1 | loss: 0.7812679
+	speed: 1.7491s/iter; left time: 3447.5039s
+	iters: 700, epoch: 1 | loss: 0.7645126
+	speed: 1.7483s/iter; left time: 3271.0603s
+	iters: 800, epoch: 1 | loss: 0.4216925
+	speed: 1.7478s/iter; left time: 3095.2686s
+	iters: 900, epoch: 1 | loss: 0.6762431
+	speed: 1.7598s/iter; left time: 2940.6431s
+	iters: 1000, epoch: 1 | loss: 0.5655262
+	speed: 1.7937s/iter; left time: 2817.8275s
+	iters: 1100, epoch: 1 | loss: 0.3729617
+	speed: 1.8009s/iter; left time: 2649.1885s
+	iters: 1200, epoch: 1 | loss: 0.5613554
+	speed: 1.8136s/iter; left time: 2486.5089s
+Epoch: 1 cost time: 2317.7464904785156
+Epoch: 1, Steps: 1285 | Train Loss: 0.6943437 Vali Loss: 0.4972663 Test Loss: 0.7055900
+Validation loss decreased (inf --> 0.497266).  Saving model ...
+Traceback (most recent call last):
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/serialization.py", line 372, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/serialization.py", line 493, in _save
+    zip_file.write_record(name, buf_value, len(buf_value))
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "run.py", line 158, in <module>
+    exp.train(setting)
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 214, in train
+    early_stopping(vali_loss, self.model, path)
+  File "/g/data/hn98/du/exlts/hourdayweek/utils/tools.py", line 43, in __call__
+    self.save_checkpoint(val_loss, model, path)
+  File "/g/data/hn98/du/exlts/hourdayweek/utils/tools.py", line 57, in save_checkpoint
+    torch.save(model.state_dict(), path + '/' + 'checkpoint.pth')
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/serialization.py", line 373, in save
+    return
+  File "/jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:274] . unexpected pos 1062912 vs 1062800
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:274] . unexpected pos 1062912 vs 1062800
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x149cafb5d6a7 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1c99500 (0x149ceeec4500 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x1c956d3 (0x149ceeec06d3 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xa9 (0x149ceeec5609 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0xe1 (0x149ceeec6141 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x115 (0x149ceeec6935 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x654323 (0x149cfe597323 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x2c2b90 (0x149cfe205b90 in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x2c3cfe (0x149cfe206cfe in /jobfs/116444162.gadi-pbs/timesnet/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #9: python() [0x4e0800]
+frame #10: python() [0x4f16a8]
+frame #11: python() [0x4f1691]
+frame #12: python() [0x4f1691]
+frame #13: python() [0x4f1691]
+frame #14: python() [0x4f1691]
+frame #15: python() [0x4c9280]
+<omitting python frames>
+frame #21: __libc_start_main + 0xe5 (0x149d0d356d85 in /lib64/libc.so.6)
+frame #22: python() [0x57a64d]
+
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=4, c_out=822, checkpoints='./checkpoints/', d_ff=512, d_layers=1, d_model=512, data='custom', data_path='pems04_d.csv', dec_in=822, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=822, factor=3, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='TimesNet', model_id='pems04_d_96_720', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=720, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=2, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems04_d_96_720_TimesNet_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4759
+val 79
+test 873
+	iters: 100, epoch: 1 | loss: 0.9748078
+	speed: 2.6990s/iter; left time: 6151.0748s
+	iters: 200, epoch: 1 | loss: 1.0594751
+	speed: 2.6923s/iter; left time: 5866.4696s
+	iters: 300, epoch: 1 | loss: 1.1785413
+	speed: 2.6855s/iter; left time: 5583.1242s
+	iters: 400, epoch: 1 | loss: 0.9609573
+	speed: 2.7278s/iter; left time: 5398.3754s
+	iters: 500, epoch: 1 | loss: 0.6396366
+	speed: 2.7218s/iter; left time: 5114.2185s
+	iters: 600, epoch: 1 | loss: 0.9510720
+	speed: 2.7384s/iter; left time: 4871.5734s
+	iters: 700, epoch: 1 | loss: 0.7920854
+	speed: 2.7396s/iter; left time: 4599.8334s
+	iters: 800, epoch: 1 | loss: 1.0325180
+	speed: 2.7419s/iter; left time: 4329.4431s
+	iters: 900, epoch: 1 | loss: 0.8709493
+	speed: 2.7423s/iter; left time: 4055.8283s
+	iters: 1000, epoch: 1 | loss: 0.8304488
+	speed: 2.7408s/iter; left time: 3779.6151s
+	iters: 1100, epoch: 1 | loss: 0.5547374
+	speed: 2.7702s/iter; left time: 3543.0648s
+Epoch: 1 cost time: 3252.520138025284
+Epoch: 1, Steps: 1189 | Train Loss: 0.8477688 Vali Loss: 0.5471559 Test Loss: 0.8597494
+Validation loss decreased (inf --> 0.547156).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.8211079
+	speed: 10.5281s/iter; left time: 11475.6805s
+	iters: 200, epoch: 2 | loss: 0.6067794
+	speed: 2.8374s/iter; left time: 2809.0459s
+	iters: 300, epoch: 2 | loss: 0.5702929
+	speed: 2.8572s/iter; left time: 2542.8830s
+	iters: 400, epoch: 2 | loss: 0.7523335
+	speed: 2.7606s/iter; left time: 2180.8966s
+	iters: 500, epoch: 2 | loss: 0.7827021
+	speed: 2.7563s/iter; left time: 1901.8308s
+	iters: 600, epoch: 2 | loss: 0.4600750
+	speed: 2.8028s/iter; left time: 1653.6595s
+	iters: 700, epoch: 2 | loss: 0.8182560
+	speed: 2.8355s/iter; left time: 1389.3902s
+	iters: 800, epoch: 2 | loss: 0.4815207
+	speed: 2.8196s/iter; left time: 1099.6591s
+	iters: 900, epoch: 2 | loss: 0.6191152
+	speed: 2.7781s/iter; left time: 805.6414s
+	iters: 1000, epoch: 2 | loss: 0.4768330
+	speed: 2.7848s/iter; left time: 529.1145s
+	iters: 1100, epoch: 2 | loss: 0.7096905
+	speed: 2.8045s/iter; left time: 252.4089s
+Epoch: 2 cost time: 3333.487356901169
+Epoch: 2, Steps: 1189 | Train Loss: 0.6665779 Vali Loss: 0.5535880 Test Loss: 0.9732488
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : long_term_forecast_pems04_d_96_720_TimesNet_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 873
+test shape: (873, 1, 720, 822) (873, 1, 720, 822)
+test shape: (873, 720, 822) (873, 720, 822)
+mse:0.8597474694252014, mae:0.6379379630088806
+>>>>>>>Overall time: 8144 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

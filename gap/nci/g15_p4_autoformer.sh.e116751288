@@ -1,0 +1,11 @@
+
+------------------------------------------------------------------------
+Job 116751288 has exceeded memory allocation on node gadi-gpu-v100-0063.gadi.nci.org.au
+Process "bash", pid 3646192, rss 2019328, vmem 241713152
+Process "116751288.gadi-", pid 3646267, rss 1839104, vmem 228139008
+Process "python", pid 3650623, rss 390044291072, vmem 478861893632
+Process "torch_shm_manag", pid 3650678, rss 29331456, vmem 1365356544
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/116751288.gadi-pbs.SC: line 141: 3650623 Killed                  python -u run.py --train_seed 2024 --gap_day 548 --samle_rate 0.1 --task_name long_term_forecast --is_training 1 --root_path ../../data/ --data_path pems04_all_common_flow.csv --model_id pems04_all_96_720 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 720 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 822 --dec_in 822 --c_out 822 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems04_gap15_in96_out720_srate01_trseed2024.log 2>&1

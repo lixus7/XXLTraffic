@@ -1,0 +1,22 @@
+
+------------------------------------------------------------------------
+Job 116408847 has exceeded memory allocation on node gadi-gpu-v100-0092.gadi.nci.org.au
+Process "bash", pid 2403383, rss 3473408, vmem 241713152
+Process "116408847.gadi-", pid 2403463, rss 3153920, vmem 228139008
+Process "python", pid 2405497, rss 64084434944, vmem 86293889024
+Process "torch_shm_manag", pid 2405525, rss 30126080, vmem 1365356544
+Process "torch_shm_manag", pid 2405526, rss 31043584, vmem 1365356544
+Process "torch_shm_manag", pid 2405527, rss 31170560, vmem 1365356544
+Process "torch_shm_manag", pid 2405528, rss 31092736, vmem 1365356544
+Process "torch_shm_manag", pid 2405529, rss 31272960, vmem 1365356544
+Process "torch_shm_manag", pid 2405530, rss 30539776, vmem 1365356544
+Process "torch_shm_manag", pid 2405531, rss 31100928, vmem 1365356544
+Process "torch_shm_manag", pid 2405532, rss 30228480, vmem 1365356544
+Process "torch_shm_manag", pid 2405533, rss 30146560, vmem 1365356544
+Process "torch_shm_manag", pid 2405534, rss 31371264, vmem 1365356544
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/116408847.gadi-pbs.SC: line 81: 2405497 Killed                  python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems11_h.csv --model_id pems11_h_96_96 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 192 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 521 --dec_in 521 --c_out 521 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems11_h_in96_out192_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/116408847.gadi-pbs.SC: line 109: 2408667 Aborted                 python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems11_h.csv --model_id pems11_h_96_336 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 336 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 521 --dec_in 521 --c_out 521 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems11_h_in96_out336_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/116408847.gadi-pbs.SC: line 137: 2410530 Aborted                 python -u run.py --train_seed 2024 --samle_rate 1 --task_name long_term_forecast --is_training 1 --root_path ../data/ --data_path pems11_h.csv --model_id pems11_h_96_720 --model $model_name --data custom --features M --seq_len 96 --label_len 48 --pred_len 720 --e_layers 2 --d_layers 1 --factor 3 --d_model 128 --enc_in 521 --dec_in 521 --c_out 521 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> autoformer_pems11_h_in96_out720_trseed2024.log 2>&1

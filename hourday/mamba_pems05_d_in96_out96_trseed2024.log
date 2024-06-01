@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "run.py", line 4, in <module>
+    from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_long_term_forecasting.py", line 2, in <module>
+    from exp.exp_basic import Exp_Basic
+  File "/g/data/hn98/du/exlts/hourdayweek/exp/exp_basic.py", line 3, in <module>
+    from models import Autoformer, Transformer, TimesNet, Nonstationary_Transformer, DLinear, FEDformer, \
+  File "/g/data/hn98/du/exlts/hourdayweek/models/Mamba.py", line 7, in <module>
+    from mamba_ssm import Mamba
+ModuleNotFoundError: No module named 'mamba_ssm'
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=103, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems05_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=103, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems05_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems05_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 2886
+val 346
+test 784
+Args in experiment:
+Namespace(activation='gelu', anomaly_ratio=0.25, batch_size=32, c_out=103, checkpoints='./checkpoints/', d_conv=4, d_ff=16, d_layers=1, d_model=128, data='custom', data_path='pems05_d.csv', dec_in=151, des='Exp', devices='0,1,2,3', distil=True, dropout=0, e_layers=2, embed='timeF', enc_in=103, expand=2, factor=1, features='M', freq='h', gap_day=365, gpu=0, inverse=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='MSE', lradj='type1', mask_rate=0.25, model='Mamba', model_id='pems05_d_96_96', moving_avg=25, n_heads=8, num_kernels=6, num_workers=10, output_attention=False, p_hidden_dims=[128, 128], p_hidden_layers=2, patience=3, pred_len=96, root_path='../../data/pems/', samle_rate=1.0, sample_seed=7, seasonal_patterns='Monthly', seq_len=96, target='OT', task_name='long_term_forecast', top_k=5, train_epochs=10, train_seed=2024, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_pems05_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 2886
+val 346
+test 784
+Epoch: 1 cost time: 3.547783374786377
+Epoch: 1, Steps: 90 | Train Loss: 0.8641202 Vali Loss: 0.7097556 Test Loss: 0.7186221
+Validation loss decreased (inf --> 0.709756).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 1.5488173961639404
+Epoch: 2, Steps: 90 | Train Loss: 0.7107580 Vali Loss: 0.6609741 Test Loss: 0.6548042
+Validation loss decreased (0.709756 --> 0.660974).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 1.3469116687774658
+Epoch: 3, Steps: 90 | Train Loss: 0.6125697 Vali Loss: 0.6989781 Test Loss: 0.6585183
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 1.6126563549041748
+Epoch: 4, Steps: 90 | Train Loss: 0.5708296 Vali Loss: 0.7041963 Test Loss: 0.6665146
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 1.5335259437561035
+Epoch: 5, Steps: 90 | Train Loss: 0.5518831 Vali Loss: 0.7135817 Test Loss: 0.6731389
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_pems05_d_96_96_Mamba_custom_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_fc1_ebtimeF_dtTrue_srate1.0_sseed7_trainseed2024_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 784
+test shape: (784, 1, 96, 103) (784, 1, 96, 103)
+test shape: (784, 96, 103) (784, 96, 103)
+mse:0.654804527759552, mae:0.5106576085090637
+>>>>>>>Overall time: 30 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
