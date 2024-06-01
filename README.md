@@ -30,5 +30,10 @@
  
 ## Data download
 
-### Raw data: https://pan.baidu.com/s/1SW2MROzc05k8NPasrxRznQ?pwd=x0v4    code: x0v4
-### Gap data: 
+### Raw data: https://pan.baidu.com/s/1SW2MROzc05k8NPasrxRznQ?pwd=x0v4    code: x0v4   (Baidu Cloud)
+
+### Gap data, hourly data and daily data: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5 (OneDrive)
+
+#### The sample data include gap data, hourly data and daily data are included in pems05.zip
+
+
