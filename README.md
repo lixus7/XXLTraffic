@@ -30,8 +30,6 @@
  
 ## Data download
 
-### Gap data, hourly data and daily data: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5 (OneDrive)
-
 #### The sample data include gap data, hourly data and daily data are included in pems05.zip:
 
 - Gap data: pems05_all_common_flow.csv
