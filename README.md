@@ -1,6 +1,6 @@
 # XXLTraffic
 
-## Data discription:
+## Data description:
 
 | Dataset        | Data Points | Sensors | Interval | Duration     | Date Range        |
 |----------------|-------------|---------|----------|--------------|-------------------|
