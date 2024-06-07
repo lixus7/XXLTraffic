@@ -42,3 +42,7 @@ How to preprocess the raw data to make gap data, hourly data and daily data is a
 Our benckmarking is based on Time-Series-Library:
 - Time-Series-Library: https://github.com/thuml/Time-Series-Library
 
+## License
+
+The XXLTraffic dataset is licensed under CC BY-NC 4.0 International: https://creativecommons.org/licenses/by-nc/4.0. Our code is available under the MIT License: https://opensource.org/licenses/MIT. Please check the official repositories for the licenses of any specific baseline methods used in our codebase.
+
