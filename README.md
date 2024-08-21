@@ -67,6 +67,15 @@ Our benchmark setting: The yellow boxes represent typical predictions, the gray 
 gap periods between observation and prediction, and the blue boxes indicate extended predictions.
 ![exp.](exp_fig.png)
 
+Results of Extremely Long Forecasting with gaps:
+![exp1.](ex1.png)
+
+Results of ablation study with 4 different input step lengths:
+![exp3.](ex3.png)
+
+Results of hourly and daily datasets:
+![exp2.](ex2.png)
+
 ## License
 
 The XXLTraffic dataset is licensed under CC BY-NC 4.0 International: https://creativecommons.org/licenses/by-nc/4.0. Our code is available under the MIT License: https://opensource.org/licenses/MIT. Please check the official repositories for the licenses of any specific baseline methods used in our codebase.
