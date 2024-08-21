@@ -7,6 +7,13 @@ We propose XXLTraffic, a dataset that spans up to 23 years and exhibits evolutio
 
 Traffic forecasting is crucial for smart cities and intelligent transportation initiatives, where deep learning has made significant progress in modeling complex spatio-temporal patterns in recent years. However, current public datasets have limitations in reflecting the ultra-dynamic nature of real-world scenarios, characterized by continuously evolving infrastructures, varying temporal distributions, and temporal gaps due to sensor downtimes or changes in traffic patterns. These limitations inevitably restrict the practical applicability of existing traffic forecasting datasets. To bridge this gap, we present XXLTraffic, the largest available public traffic dataset with the longest timespan and increasing number of sensor nodes over the multiple years observed in the data, curated to support research in ultra-dynamic forecasting. Our benchmark includes both typical time-series forecasting settings with hourly and daily aggregated data and novel configurations that introduce gaps and down-sample the training size to better simulate practical constraints. We anticipate the new XXLTraffic will provide a fresh perspective for the time-series and traffic forecasting communities. It would also offer a robust platform for developing and evaluating models designed to tackle ultra-dynamic and extremely long forecasting problems. Our dataset supplements existing spatio-temporal data resources and leads to new research directions in this domain.
 
+
+# Introduction
+
+## Data overview:
+(fig1.png)
+Our dataset are evolving and longer than existing datasets. Existing datasets are either limited by short temporal spans or insufficient spatial nodes. In contrast, our dataset features an evolving growth of spatial nodes and spans over 20 years.
+
 ## Data description:
 
 | Dataset        | Data Points | Sensors | Interval | Duration     | Date Range        |
