@@ -45,6 +45,9 @@ Our dataset are evolving and longer than existing datasets. Existing datasets ar
 XXLTraffic dataset overview and its evolving development. This figure provides a global overview and two local overviews, showcasing the diversity of sensor distribution. The lower parts highlights a selected region to illustrate the growth and changes in traffic sensors over time.
 ![fig2.](fig2.png)
 
+Sensor traffic status distribution of District 8 from 2005 to 2024. While some sensors exhibit minimal changes, others show significant distribution differences, regardless of whether they are in low-traffic or high-traffic areas. This presents substantial challenges for extremely long forecasting with long gaps.
+![fig333.](fig333.png)
+
 ## Data download
 
 #### The sample data include gap data, hourly data and daily data are included in pems05.zip:
