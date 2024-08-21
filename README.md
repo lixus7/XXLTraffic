@@ -59,8 +59,13 @@ Sensor traffic status distribution of District 8 from 2005 to 2024. While some s
 How to preprocess the raw data to make gap data, hourly data and daily data is also provided in ```data``` filepath
 
 ## Benchmarking
+
 Our benckmarking is based on Time-Series-Library:
 - Time-Series-Library: https://github.com/thuml/Time-Series-Library
+
+Our benchmark setting: The yellow boxes represent typical predictions, the gray boxes denote
+gap periods between observation and prediction, and the blue boxes indicate extended predictions.
+![exp.](exp_fig.png)
 
 ## License
 
