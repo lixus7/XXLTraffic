@@ -11,7 +11,7 @@ Traffic forecasting is crucial for smart cities and intelligent transportation i
 # Introduction
 
 ## Data overview:
-(fig1.png)
+![fig1.](fig1.png)
 Our dataset are evolving and longer than existing datasets. Existing datasets are either limited by short temporal spans or insufficient spatial nodes. In contrast, our dataset features an evolving growth of spatial nodes and spans over 20 years.
 
 ## Data description:
