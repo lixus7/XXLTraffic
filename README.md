@@ -65,7 +65,7 @@ Our benckmarking is based on Time-Series-Library:
 
 Our benchmark setting: The yellow boxes represent typical predictions, the gray boxes denote
 gap periods between observation and prediction, and the blue boxes indicate extended predictions.
-![exp.](fig333.png)
+![exp.](expnew.png)
 
 Results of Extremely Long Forecasting with gaps:
 ![exp1.](ex1.png)
