@@ -9,6 +9,12 @@ Traffic forecasting is crucial for smart cities and intelligent transportation i
 
 # Dataset
 
+### Raw data: https://pan.baidu.com/s/1SW2MROzc05k8NPasrxRznQ?pwd=x0v4    code: x0v4   (Baidu Cloud)
+
+### Gap data, hourly data and daily data: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5 (OneDrive)
+
+#### The sample data include gap data, hourly data and daily data are included in pems05.zip
+
 ## Data introduction:
 ![fig1.](fig1.png)
 Our dataset are evolving and longer than existing datasets. Existing datasets are either limited by short temporal spans or insufficient spatial nodes. In contrast, our dataset features an evolving growth of spatial nodes and spans over 20 years.
