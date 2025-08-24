@@ -9,10 +9,6 @@ Traffic forecasting is crucial for smart cities and intelligent transportation i
 
 # Dataset
 
-### Raw data: https://pan.baidu.com/s/1SW2MROzc05k8NPasrxRznQ?pwd=x0v4    code: x0v4   (Baidu Cloud)
-
-### Gap data, hourly data and daily data: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5 (OneDrive)
-
 #### The sample data include gap data, hourly data and daily data are included in pems05.zip
 
 ## Data introduction:
@@ -60,6 +56,11 @@ Sensor traffic status distribution of District 8 from 2005 to 2024. While some s
 - Gap data: pems05_all_common_flow.csv
 - Hourly data: pems05_h.csv
 - Daily data: pems05_d.csv
+
+#### Full dataset is available as follows:
+### Raw data: https://pan.baidu.com/s/1SW2MROzc05k8NPasrxRznQ?pwd=x0v4    code: x0v4   (Baidu Cloud)
+
+### Gap data, hourly data and daily data: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5 (OneDrive)
 
 How to preprocess the raw data to make gap data, hourly data and daily data is also provided in ```data``` filepath
 
