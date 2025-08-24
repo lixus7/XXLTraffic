@@ -62,7 +62,7 @@ Sensor traffic status distribution of District 8 from 2005 to 2024. While some s
 
 ### Gap data, hourly data and daily data: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5 (OneDrive)
 
-How to preprocess the raw data to make gap data, hourly data and daily data is also provided in ```data``` filepath
+How to preprocess the raw data to make gap data, hourly data and daily data is also provided in ```data``` filepath. Refer to those 'ipynb' files.
 
 ## Benchmarking
 
