@@ -12,7 +12,7 @@ Traffic forecasting is crucial for smart cities and intelligent transportation i
 #### The sample data include gap data, hourly data and daily data are included in pems05.zip
 
 ## Data introduction:
-![fig1.](fig1.png)
+![fig1.](./fig/fig1.png)
 Our dataset are evolving and longer than existing datasets. Existing datasets are either limited by short temporal spans or insufficient spatial nodes. In contrast, our dataset features an evolving growth of spatial nodes and spans over 20 years.
 
 ## Data description:
@@ -69,9 +69,19 @@ How to preprocess the raw data to make gap data, hourly data and daily data is a
 Our benckmarking is based on Time-Series-Library:
 - Time-Series-Library: https://github.com/thuml/Time-Series-Library
 
+The required environments setting is shown in requirements.txt
+
 Our benchmark setting: The yellow boxes represent typical predictions, the gray boxes denote
 gap periods between observation and prediction, and the blue boxes indicate extended predictions.
 ![exp.](expnew.png)
+
+How to run:
+
+enter the filepath '/gap/scripts/' and run every separate script, for instance:
+
+```
+bash g_p3_autoformer.sh
+```
 
 Results of Extremely Long Forecasting with gaps:
 ![exp1.](ex1.png)
