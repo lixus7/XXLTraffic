@@ -1,0 +1,14 @@
+
+------------------------------------------------------------------------
+Job 147434599 has exceeded memory allocation on node gadi-gpu-v100-0067.gadi.nci.org.au
+Process "bash", pid 668350, rss 2068480, vmem 241790976
+Process "147434599.gadi-", pid 668426, rss 1732608, vmem 228216832
+Process "python", pid 668470, rss 394317475840, vmem 454240976896
+Process "torch_shm_manag", pid 668529, rss 31244288, vmem 1365434368
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/147434599.gadi-pbs.SC: line 57: 668470 Killed                  python -u run.py --train_seed 2024 --gap_day 730 --samle_rate 1.0 --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems04_all_common_flow.csv --model_id pems04_all_96_96 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 96 --pred_len 96 --e_layers 2 --d_layers 1 --factor 3 --enc_in 822 --dec_in 822 --c_out 822 --d_model 512 --d_ff 512 --top_k 5 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> micn_pems04_gap2_in96_out96_srate10_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/147434599.gadi-pbs.SC: line 90: 671261 Killed                  python -u run.py --train_seed 2024 --gap_day 730 --samle_rate 1.0 --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems04_all_common_flow.csv --model_id pems04_all_96_192 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 96 --pred_len 192 --e_layers 2 --d_layers 1 --factor 3 --enc_in 822 --dec_in 822 --c_out 822 --d_model 512 --d_ff 512 --top_k 5 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> micn_pems04_gap2_in96_out192_srate10_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/147434599.gadi-pbs.SC: line 122: 674883 Killed                  python -u run.py --train_seed 2024 --gap_day 730 --samle_rate 1.0 --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems04_all_common_flow.csv --model_id pems04_all_96_336 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 96 --pred_len 336 --e_layers 2 --d_layers 1 --factor 3 --enc_in 822 --dec_in 822 --c_out 822 --d_model 512 --d_ff 512 --top_k 5 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> micn_pems04_gap2_in96_out336_srate10_trseed2024.log 2>&1
+=>> PBS: job killed: walltime 172814 exceeded limit 172740

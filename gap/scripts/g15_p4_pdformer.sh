@@ -4,9 +4,9 @@
 #PBS -l walltime=47:59:00
 #PBS -l ngpus=1
 #PBS -l ncpus=12
-#PBS -l mem=384GB
-#PBS -l jobfs=400GB
-#PBS -P wn86
+#PBS -l mem=130GB
+#PBS -l jobfs=100GB
+#PBS -P hn98
 #PBS -l storage=scratch/hn98+gdata/hn98
 #PBS -M du.yin@unsw.edu.au
 #PBS -m b
@@ -20,22 +20,24 @@ nvidia-smi
 
 cd /g/data/hn98/du/exlts/ddd2
 
-# export CUDA_VISIBLE_DEVICES=7
-
-model_name=DLinear
+model_name=pdformer
 
 python -u run.py \
+  --gap_day 548  \
+  --batch_size  8 \
   --train_seed 2024 \
   --samle_rate 0.1 \
   --task_name long_term_forecast \
   --is_training 1 \
+  --adj_path ../../data/W_pems04.csv \
   --root_path ../../data/pems/ \
   --data_path pems04_all_common_flow.csv \
-  --model_id pems04_all_720_96 \
+  --model_id pems04_all_96_96 \
   --model $model_name \
   --data custom \
+  --target '' \
   --features M \
-  --seq_len 720 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 96 \
   --e_layers 2 \
@@ -44,26 +46,30 @@ python -u run.py \
   --enc_in 822 \
   --dec_in 822 \
   --c_out 822 \
-  --d_model 512 \
-  --d_ff 512 \
-  --batch_size 4 \
-  --top_k 5 \
   --des 'Exp' \
-  --itr 1   >> dlinear_pems04_gap_in720_out96_srate01_trseed2024.log 2>&1
+  --itr 1 \
+  --learning_rate 0.0005 \
+  --train_epoch 200 \
+  --patience 5 \
+  --lradj 'type3' >> pdformer_pems04_gap15_in96_out96_srate01_trseed2024.log 2>&1
 
 
 python -u run.py \
+  --gap_day 548  \
+  --batch_size  8 \
   --train_seed 2024 \
   --samle_rate 0.1 \
   --task_name long_term_forecast \
   --is_training 1 \
+  --adj_path ../../data/W_pems04.csv \
   --root_path ../../data/pems/ \
   --data_path pems04_all_common_flow.csv \
-  --model_id pems04_all_720_192 \
+  --model_id pems04_all_96_192 \
   --model $model_name \
   --data custom \
+  --target '' \
   --features M \
-  --seq_len 720 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 192 \
   --e_layers 2 \
@@ -72,26 +78,29 @@ python -u run.py \
   --enc_in 822 \
   --dec_in 822 \
   --c_out 822 \
-  --d_model 512 \
-  --d_ff 512 \
-  --batch_size 4 \
-  --top_k 5 \
   --des 'Exp' \
-  --itr 1  >> dlinear_pems04_gap_in720_out192_srate01_trseed2024.log 2>&1
-
+  --itr 1 \
+  --learning_rate 0.0005 \
+  --train_epoch 200 \
+  --patience 5 \
+  --lradj 'type3'  >> pdformer_pems04_gap15_in96_out192_srate01_trseed2024.log 2>&1
 
 python -u run.py \
+  --gap_day 548  \
+  --batch_size  8 \
   --train_seed 2024 \
   --samle_rate 0.1 \
   --task_name long_term_forecast \
   --is_training 1 \
+  --adj_path ../../data/W_pems04.csv \
   --root_path ../../data/pems/ \
   --data_path pems04_all_common_flow.csv \
-  --model_id pems04_all_720_336 \
+  --model_id pems04_all_96_336 \
   --model $model_name \
   --data custom \
+  --target '' \
   --features M \
-  --seq_len 720 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 336 \
   --e_layers 2 \
@@ -100,40 +109,9 @@ python -u run.py \
   --enc_in 822 \
   --dec_in 822 \
   --c_out 822 \
-  --d_model 512 \
-  --d_ff 512 \
-  --batch_size 4 \
-  --top_k 5 \
   --des 'Exp' \
-  --itr 1 >> dlinear_pems04_gap_in720_out336_srate01_trseed2024.log 2>&1
-
-
-python -u run.py \
-  --train_seed 2024 \
-  --samle_rate 0.1 \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ../../data/pems/ \
-  --data_path pems04_all_common_flow.csv \
-  --model_id pems04_all_720_720 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 720 \
-  --label_len 48 \
-  --pred_len 720 \
-  --e_layers 2 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 822 \
-  --dec_in 822 \
-  --c_out 822 \
-  --d_model 512 \
-  --d_ff 512 \
-  --batch_size 4 \
-  --top_k 5 \
-  --des 'Exp' \
-  --itr 1 >> dlinear_pems04_gap_in720_out720_srate01_trseed2024.log 2>&1
-
-
-
+  --itr 1 \
+  --learning_rate 0.0005 \
+  --train_epoch 200 \
+  --patience 5 \
+  --lradj 'type3'  >> pdformer_pems04_gap15_in96_out336_srate01_trseed2024.log 2>&1

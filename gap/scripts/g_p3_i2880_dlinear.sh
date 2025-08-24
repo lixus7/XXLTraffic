@@ -32,11 +32,11 @@ python -u run.py \
   --is_training 1 \
   --root_path ../../data/pems/ \
   --data_path pems03_all_common_flow.csv \
-  --model_id pems03_all_720_96 \
+  --model_id pems03_all_2880_96 \
   --model $model_name \
   --data custom \
   --features M \
-  --seq_len 720 \
+  --seq_len 2880 \
   --label_len 48 \
   --pred_len 96 \
   --e_layers 2 \
@@ -50,7 +50,7 @@ python -u run.py \
   --batch_size 4 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1   >> dlinear_pems03_gap_in720_out96_srate01_trseed2024.log 2>&1
+  --itr 1   >> dlinear_pems03_gap_in2880_out96_srate01_trseed2024.log 2>&1
 
 
 python -u run.py \
@@ -61,11 +61,11 @@ python -u run.py \
   --is_training 1 \
   --root_path ../../data/pems/ \
   --data_path pems03_all_common_flow.csv \
-  --model_id pems03_all_720_192 \
+  --model_id pems03_all_2880_192 \
   --model $model_name \
   --data custom \
   --features M \
-  --seq_len 720 \
+  --seq_len 2880 \
   --label_len 48 \
   --pred_len 192 \
   --e_layers 2 \
@@ -79,7 +79,7 @@ python -u run.py \
   --batch_size 4 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1  >> dlinear_pems03_gap_in720_out192_srate01_trseed2024.log 2>&1
+  --itr 1  >> dlinear_pems03_gap_in2880_out192_srate01_trseed2024.log 2>&1
 
 
 python -u run.py \
@@ -90,11 +90,11 @@ python -u run.py \
   --is_training 1 \
   --root_path ../../data/pems/ \
   --data_path pems03_all_common_flow.csv \
-  --model_id pems03_all_720_336 \
+  --model_id pems03_all_2880_336 \
   --model $model_name \
   --data custom \
   --features M \
-  --seq_len 720 \
+  --seq_len 2880 \
   --label_len 48 \
   --pred_len 336 \
   --e_layers 2 \
@@ -108,7 +108,7 @@ python -u run.py \
   --batch_size 4 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1 >> dlinear_pems03_gap_in720_out336_srate01_trseed2024.log 2>&1
+  --itr 1 >> dlinear_pems03_gap_in2880_out336_srate01_trseed2024.log 2>&1
 
 
 # python -u run.py \
@@ -119,13 +119,13 @@ python -u run.py \
 #   --is_training 1 \
 #   --root_path ../../data/pems/ \
 #   --data_path pems03_all_common_flow.csv \
-#   --model_id pems03_all_720_720 \
+#   --model_id pems03_all_2880_2880 \
 #   --model $model_name \
 #   --data custom \
 #   --features M \
-#   --seq_len 720 \
+#   --seq_len 2880 \
 #   --label_len 48 \
-#   --pred_len 720 \
+#   --pred_len 2880 \
 #   --e_layers 2 \
 #   --d_layers 1 \
 #   --factor 3 \
@@ -137,7 +137,7 @@ python -u run.py \
 #   --batch_size 4 \
 #   --top_k 5 \
 #   --des 'Exp' \
-#   --itr 1 >> dlinear_pems03_gap_in720_out720_srate01_trseed2024.log 2>&1
+#   --itr 1 >> dlinear_pems03_gap_in2880_out2880_srate01_trseed2024.log 2>&1
 
 
 

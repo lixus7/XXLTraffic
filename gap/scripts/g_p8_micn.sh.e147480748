@@ -1,0 +1,13 @@
+
+------------------------------------------------------------------------
+Job 147480748 has exceeded memory allocation on node gadi-gpu-v100-0155.gadi.nci.org.au
+Process "bash", pid 1003645, rss 3534848, vmem 241790976
+Process "147480748.gadi-", pid 1003721, rss 3067904, vmem 228216832
+Process "python", pid 1014272, rss 192937848832, vmem 224713146368
+Process "torch_shm_manag", pid 1014326, rss 31518720, vmem 1365434368
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/147480748.gadi-pbs.SC: line 90: 1014272 Killed                  python -u run.py --train_seed 2024 --gap_day 365 --samle_rate 0.5 --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems08_all_common_flow.csv --model_id pems08_all_96_192 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 96 --pred_len 192 --e_layers 2 --d_layers 1 --factor 3 --enc_in 212 --dec_in 212 --c_out 212 --d_model 512 --d_ff 512 --top_k 5 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> micn_pems08_gap1_in96_out192_srate05_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/147480748.gadi-pbs.SC: line 122: 1021781 Killed                  python -u run.py --train_seed 2024 --gap_day 365 --samle_rate 0.5 --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems08_all_common_flow.csv --model_id pems08_all_96_336 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 96 --pred_len 336 --e_layers 2 --d_layers 1 --factor 3 --enc_in 212 --dec_in 212 --c_out 212 --d_model 512 --d_ff 512 --top_k 5 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> micn_pems08_gap1_in96_out336_srate05_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/147480748.gadi-pbs.SC: line 154: 1040797 Killed                  python -u run.py --train_seed 2024 --gap_day 365 --samle_rate 0.5 --task_name long_term_forecast --is_training 1 --root_path ../../data/pems/ --data_path pems08_all_common_flow.csv --model_id pems08_all_96_720 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 96 --pred_len 720 --e_layers 2 --d_layers 1 --factor 3 --enc_in 212 --dec_in 212 --c_out 212 --d_model 512 --d_ff 512 --top_k 5 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> micn_pems08_gap1_in96_out720_srate05_trseed2024.log 2>&1

@@ -1,0 +1,12 @@
+
+------------------------------------------------------------------------
+Job 129022552 has exceeded memory allocation on node gadi-gpu-v100-0050.gadi.nci.org.au
+Process "bash", pid 1363714, rss 3481600, vmem 241786880
+Process "129022552.gadi-", pid 1363788, rss 3330048, vmem 228212736
+Process "python", pid 3410750, rss 139346456576, vmem 160471891968
+Process "torch_shm_manag", pid 3410803, rss 31293440, vmem 1365430272
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/129022552.gadi-pbs.SC: line 86: 3410750 Killed                  python -u run.py --gap_day 548 --batch_size 16 --train_seed 2024 --samle_rate 0.1 --task_name long_term_forecast --is_training 1 --adj_path ../../data/W_pems04.csv --root_path ../../data/pems/ --data_path pems04_all_common_flow.csv --model_id pems04_all_96_192 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 48 --pred_len 192 --e_layers 2 --d_layers 1 --factor 3 --enc_in 822 --dec_in 822 --c_out 822 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> stgcn_pems04_gap15_in96_out192_srate01_trseed2024.log 2>&1
+/local/spool/pbs/mom_priv/jobs/129022552.gadi-pbs.SC: line 117: 3439725 Killed                  python -u run.py --gap_day 548 --batch_size 16 --train_seed 2024 --samle_rate 0.1 --task_name long_term_forecast --is_training 1 --adj_path ../../data/W_pems04.csv --root_path ../../data/pems/ --data_path pems04_all_common_flow.csv --model_id pems04_all_96_336 --model $model_name --data custom --target '' --features M --seq_len 96 --label_len 48 --pred_len 336 --e_layers 2 --d_layers 1 --factor 3 --enc_in 822 --dec_in 822 --c_out 822 --des 'Exp' --itr 1 --learning_rate 0.0005 --train_epoch 200 --patience 5 --lradj 'type3' >> stgcn_pems04_gap15_in96_out336_srate01_trseed2024.log 2>&1
